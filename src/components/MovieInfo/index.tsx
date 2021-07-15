@@ -7,8 +7,15 @@ import { IMAGE_BASE_URL, POSTER_SIZE } from '../../config';
 import NoImage from '../../images/no_image.jpg';
 // Styles
 import { Wrapper, Content, Text } from './MovieInfo.styles';
+// Types
+import { MovieState } from '../../hooks/useMovieFetch'
+type Props = {
+    movie: MovieState;
+    backdrop?: string;
 
-const MovieInfo = ({ movie }) => (
+}
+
+const MovieInfo: React.FC<Props> = ({ movie }) => (
     <Wrapper backdrop={movie.backdrop_path}>
         <Content>
             <Thumb
